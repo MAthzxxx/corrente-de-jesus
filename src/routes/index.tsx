@@ -458,6 +458,192 @@ function MaterialCarousel() {
   );
 }
 
+const DEPOIMENTOS = [
+  {
+    src: "/depoimentos/depoimento-1.jpg",
+    alt: "Depoimento de Juliana Martins no WhatsApp mostrando as atividades de O Chamado de Abraão",
+    name: "Juliana Martins",
+  },
+  {
+    src: "/depoimentos/depoimento-2.jpg",
+    alt: "Depoimento de Camila Rodrigues no WhatsApp mostrando o desenho colorido de Jesus com as crianças",
+    name: "Camila Rodrigues",
+  },
+  {
+    src: "/depoimentos/depoimento-3.jpg",
+    alt: "Depoimento de Dona Helena no WhatsApp sobre o momento especial com os netinhos com a história de Jonas",
+    name: "Dona Helena",
+  },
+  {
+    src: "/depoimentos/depoimento-4.jpg",
+    alt: "Depoimento de Renata Souza no WhatsApp elogiando o pacote completo e os esboços de aula",
+    name: "Renata Souza",
+  },
+  {
+    src: "/depoimentos/depoimento-5.jpg",
+    alt: "Depoimento de Patrícia Almeida no WhatsApp usando as atividades na Escola Bíblica Infantil",
+    name: "Patrícia Almeida",
+  },
+];
+
+function DepoimentosCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "center",
+    loop: true,
+    containScroll: false,
+    dragFree: false,
+  });
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModalImage(null);
+    };
+    if (modalImage) {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [modalImage]);
+
+  return (
+    <div className="relative w-full mt-4 sm:mt-6 select-none">
+      {/* Seta esquerda no desktop */}
+      <button
+        type="button"
+        onClick={scrollPrev}
+        aria-label="Depoimento anterior"
+        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* Seta direita no desktop */}
+      <button
+        type="button"
+        onClick={scrollNext}
+        aria-label="Próximo depoimento"
+        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Viewport do carrossel */}
+      <div
+        ref={emblaRef}
+        className="overflow-hidden cursor-grab active:cursor-grabbing w-full"
+        style={{ touchAction: "pan-y" }}
+      >
+        <div className="flex gap-4 sm:gap-6 py-2" style={{ touchAction: "pan-y" }}>
+          {DEPOIMENTOS.map((d, i) => (
+            <div
+              key={d.src}
+              className="w-[82vw] max-w-[315px] sm:w-[320px] shrink-0 mx-auto"
+            >
+              <div
+                onClick={() => setModalImage(d.src)}
+                className="group relative overflow-hidden rounded-2xl bg-card border-[4px] border-white cursor-pointer"
+                title="Toque para ampliar"
+              >
+                <img
+                  src={d.src}
+                  alt={d.alt}
+                  className="w-full h-auto block object-contain pointer-events-none select-none rounded-[12px]"
+                  width={576}
+                  height={1024}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  draggable={false}
+                />
+                <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1 rounded-full bg-navy/80 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm opacity-90 group-hover:opacity-100 transition shadow-sm">
+                  <span>🔍 Ampliar</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Indicadores (dots) de navegação */}
+      <div className="mt-4 flex items-center justify-center gap-2">
+        {DEPOIMENTOS.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => scrollTo(i)}
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              selectedIndex === i ? "w-6 bg-navy" : "w-2 bg-navy/30 hover:bg-navy/50"
+            }`}
+            aria-label={`Ir para depoimento ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Modal / Lightbox de ampliação ao tocar ou clicar */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 p-3 sm:p-4 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setModalImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative max-w-[420px] w-full max-h-[92vh] flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setModalImage(null)}
+              className="self-end mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition text-lg font-bold cursor-pointer"
+              aria-label="Fechar"
+            >
+              ✕
+            </button>
+            <div className="overflow-hidden rounded-2xl bg-card shadow-2xl border border-white/20">
+              <img
+                src={modalImage}
+                alt="Depoimento ampliado"
+                className="w-full h-auto max-h-[80vh] object-contain block select-none"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Material() {
   return (
     <section id="material" className="bg-sun pt-8 pb-10 sm:py-12 overflow-hidden">
@@ -484,19 +670,27 @@ function Material() {
 
       <div className={`${W} mt-4`}>
         <CTA className="material-cta-pulse">Quero esse material</CTA>
-        <div className="relative mt-8 overflow-hidden rounded-3xl border-[6px] border-card">
-          <video
-            src="/loop-irmaos.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full aspect-[4/5] object-cover block"
-          />
-          <span className="absolute left-4 top-4 rounded-full bg-red px-4 py-1.5 font-display text-sm font-bold text-primary-foreground">
-            ▶ Na mesa de casa
-          </span>
+      </div>
+
+      {/* Provas Sociais — Substitui exclusivamente o vídeo 'Na mesa de casa' dentro da área amarela */}
+      <div className="mt-10 sm:mt-14 w-full">
+        <div className={`${W} text-center`}>
+          <h3 className="text-[1.65rem] min-[360px]:text-[1.85rem] sm:text-[2.2rem] font-bold leading-tight text-navy uppercase font-display">
+            Quem conhece, se{" "}
+            <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-navy px-[0.35em] pt-[0.08em] pb-[0.14em] text-sun shadow-sm">
+              encanta! 💛
+            </span>
+          </h3>
+          <p
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+            className="mt-2.5 sm:mt-3 inline-block w-[calc(100%-52px)] sm:w-auto max-w-[340px] sm:max-w-[440px] mx-auto rounded-[14px] bg-[#FFF9E9] px-4 py-2 sm:px-5 sm:py-2.5 font-poppins text-[15px] sm:text-[16.5px] font-medium text-[#101C4B] leading-snug text-center"
+          >
+            Veja o que nossos clientes estão dizendo sobre as atividades!
+          </p>
+        </div>
+
+        <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-6">
+          <DepoimentosCarousel />
         </div>
       </div>
     </section>
