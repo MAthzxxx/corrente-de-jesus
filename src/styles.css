@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -13,6 +14,7 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --font-display: "Fredoka", "Baloo 2", system-ui, sans-serif;
   --font-sans: "Nunito", system-ui, sans-serif;
+  --font-poppins: "Poppins", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -143,6 +145,18 @@
   box-shadow: 0 6px 0 color-mix(in oklab, var(--beige) 70%, var(--ink) 15%);
 }
 
+@utility hero-subtitle-v2 {
+  font-family: var(--font-sans), 'Nunito', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 17.5px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: center;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @utility hl {
   background: var(--sun);
   color: var(--navy);
@@ -196,6 +210,67 @@
     animation: none;
     transform: translateY(5px);
   }
+
+  /* Remove completamente as sombras do botão verde na seção Hero (mobile) */
+  .hero-cta-pulse,
+  .hero-cta-pulse:hover,
+  .hero-cta-pulse:active,
+  .hero-cta-pulse:focus,
+  .hero-cta-pulse * {
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-filter: none !important;
+  }
+  .hero-cta-pulse:active {
+    transform: translateY(2px) !important;
+  }
+}
+
+/* Subtítulo Hero v2 fiel à referência (Nunito) */
+.hero-subtitle-v2 {
+  font-family: var(--font-sans), 'Nunito', system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 17px !important;
+  line-height: 1.4 !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 6px !important;
+  margin-bottom: 22px !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 390px) {
+  .hero-subtitle-v2 {
+    font-size: 17.5px !important;
+    max-width: 370px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-subtitle-v2 {
+    font-size: 19px !important;
+    line-height: 1.45 !important;
+    width: 100% !important;
+    max-width: 460px !important;
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+.hero-price-card {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+@media (min-width: 640px) {
+  .hero-price-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+  }
 }
 
 /* Oculta completamente o badge "Edit with Lovable" */
@@ -214,3 +289,4 @@ button[id*="lovable"] {
   height: 0 !important;
   overflow: hidden !important;
 }
+
