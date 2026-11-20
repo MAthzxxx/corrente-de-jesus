@@ -219,15 +219,16 @@ function Hero() {
             <>
               <span className="relative inline-block whitespace-nowrap">
                 <TitleRays className="absolute -top-2 -left-3 sm:-top-3.5 sm:-left-7 w-[18px] h-[18px] sm:w-7 sm:h-7 text-sun pointer-events-none select-none" />
-                ENSINAR SOBRE{" "}
+                ENSINE SOBRE{" "}
                 <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.22em] sm:px-[0.32em] pt-[0.1em] pb-[0.2em] text-navy">
                   JESUS
                 </span>
+                ,
               </span>
               <span className="block mt-0.5 sm:mt-1 whitespace-nowrap [word-spacing:-0.05em] sm:[word-spacing:normal]">
-                FICOU MUITO MAIS{" "}
+                MESMO SEM{" "}
                 <span className="relative -top-[3px] sm:-top-[5px] inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.16em] sm:px-[0.32em] pt-[0.18em] pb-[0.12em] text-navy">
-                  FÁCIL!
+                  TEMPO!
                 </span>
               </span>
             </>
