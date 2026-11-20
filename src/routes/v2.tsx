@@ -263,7 +263,7 @@ function Hero() {
               padding: 0,
             }}
           >
-            1.000 atividades bíblicas prontas para imprimir, separadas por idade, para ensinar sobre Jesus em apenas 10 minutinhos por dia!
+            Agora ficou fácil! São mais de 1.000 atividades bíblicas prontas para imprimir e usar em apenas 10 minutinhos por dia!
           </p>
         ) : (
           <p className="mt-5 sm:mt-6 text-[18px] sm:text-[20px] font-medium leading-[1.4] sm:leading-normal text-white w-[98%] max-w-[420px] sm:w-full sm:max-w-none mx-auto text-center">
