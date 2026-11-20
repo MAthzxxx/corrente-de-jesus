@@ -211,7 +211,7 @@ function Hero() {
         <h1
           className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.12] ${
             isJesus
-              ? "text-[1.45rem] min-[360px]:text-[1.67rem] min-[390px]:text-[1.79rem] min-[420px]:text-[1.895rem] sm:text-[2.5rem]"
+              ? "text-[1.34rem] min-[360px]:text-[1.55rem] min-[390px]:text-[1.66rem] min-[420px]:text-[1.755rem] sm:text-[2.5rem]"
               : "text-[1.3875rem] min-[360px]:text-[1.6rem] min-[390px]:text-[1.71rem] min-[420px]:text-[1.8125rem] sm:text-[2.5rem]"
           }`}
         >
@@ -219,15 +219,15 @@ function Hero() {
             <>
               <span className="relative inline-block whitespace-nowrap">
                 <TitleRays className="absolute -top-2 -left-3 sm:-top-3.5 sm:-left-7 w-[18px] h-[18px] sm:w-7 sm:h-7 text-sun pointer-events-none select-none" />
-                ENSINAR SOBRE{" "}
+                DESPERTE O{" "}
                 <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.22em] sm:px-[0.32em] pt-[0.1em] pb-[0.2em] text-navy">
-                  JESUS
+                  INTERESSE
                 </span>
               </span>
               <span className="block mt-0.5 sm:mt-1 whitespace-nowrap [word-spacing:-0.05em] sm:[word-spacing:normal]">
-                FICOU MUITO MAIS{" "}
+                DAS CRIANÇAS POR{" "}
                 <span className="relative -top-[3px] sm:-top-[5px] inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.16em] sm:px-[0.32em] pt-[0.18em] pb-[0.12em] text-navy">
-                  FÁCIL!
+                  JESUS!
                 </span>
               </span>
             </>
@@ -250,23 +250,8 @@ function Hero() {
           )}
         </h1>
         {isJesus ? (
-          <p
-            className="hero-subtitle-v2"
-            style={{
-              fontFamily: '"Nunito Sans", system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: 1.35,
-              textAlign: 'center',
-              width: '94%',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginTop: '6px',
-              marginBottom: '18px',
-              padding: 0,
-            }}
-          >
-            1.000 atividades bíblicas prontas para imprimir, separadas por idade, para ensinar sobre Jesus em apenas 10 minutinhos por dia!
+          <p className="mt-3.5 sm:mt-4 text-[15.5px] min-[390px]:text-[16.5px] sm:text-[18.5px] font-medium leading-[1.4] text-white w-full max-w-[460px] mx-auto text-center">
+            São 1.000 atividades bíblicas para imprimir, separadas por idade, com jogos e desafios que prendem a atenção das crianças enquanto aprendem sobre Jesus!
           </p>
         ) : (
           <p className="mt-5 sm:mt-6 text-[18px] sm:text-[20px] font-medium leading-[1.4] sm:leading-normal text-white w-[98%] max-w-[420px] sm:w-full sm:max-w-none mx-auto text-center">
@@ -280,7 +265,7 @@ function Hero() {
           </p>
         )}
 
-        <div className={`relative z-10 ${isJesus ? "mt-0 sm:mt-6" : "mt-5 sm:mt-8"} w-[84%] sm:w-full mx-auto`}>
+        <div className={`relative ${isJesus ? "mt-4 sm:mt-6" : "mt-5 sm:mt-8"} w-[84%] sm:w-full mx-auto`}>
           <div className="rotate-[1.5deg] sm:rotate-[2deg] overflow-hidden rounded-3xl border-[5px] sm:border-[6px] border-card bg-card shadow-lg">
             <img
               src="/mae-criancas.webp"
@@ -295,28 +280,26 @@ function Hero() {
             <br />
             imprimir!
           </div>
-          <div className="absolute -bottom-3.5 sm:-bottom-6 -right-1.5 sm:-right-2 z-10 w-[45%] sm:w-[50%] rotate-[4deg] overflow-hidden rounded-2xl border-[3.5px] sm:border-4 border-card bg-card shadow-xl">
+          <div className="absolute -bottom-3.5 sm:-bottom-6 -right-1.5 sm:-right-2 z-10 w-[44%] sm:w-[50%] rotate-[4deg] overflow-hidden rounded-2xl border-[3.5px] sm:border-4 border-card bg-card shadow-xl">
             <img
-              src="/mockup-5-livros-colecao.jpg"
-              alt="Coleção Escadinha da Fé com 5 livros"
-              className="w-full aspect-square object-contain block"
+              src="/mockup-livros.webp"
+              alt="Mockup dos livros Escadinha da Fé"
+              className="w-full aspect-square object-cover block"
             />
           </div>
         </div>
 
-        <div
-          className="hero-price-card relative z-[1] mx-auto mt-1 min-[360px]:mt-1.5 sm:-mt-5 flex w-fit items-center gap-4 min-[360px]:gap-5 sm:gap-6 rounded-[20px] sm:rounded-3xl bg-card px-5 min-[360px]:px-6 py-2.5 min-[360px]:py-3 text-left"
-        >
-          <span className="text-[12px] min-[360px]:text-[13px] sm:text-sm font-semibold leading-[1.25] text-muted-foreground">
+        <div className="mx-auto mt-6 sm:mt-8 flex w-fit items-center gap-4 sm:gap-5 rounded-2xl sm:rounded-3xl bg-card px-5 sm:px-6 py-2.5 sm:py-3 text-left shadow-md">
+          <span className="text-[12.5px] sm:text-sm font-semibold leading-tight text-muted-foreground">
             a partir de
             <br />
             pagamento único
           </span>
-          <span className="font-display text-[30px] min-[360px]:text-[32px] sm:text-4xl font-bold leading-none text-go">R$ 12</span>
+          <span className="font-display text-[32px] sm:text-4xl font-bold text-go">R$ 12</span>
         </div>
 
-        <div className="mt-3.5 min-[360px]:mt-4 sm:mt-5">
-          <CTA className="hero-cta-pulse !shadow-none [filter:none]">Quero as atividades</CTA>
+        <div className="mt-5">
+          <CTA className="hero-cta-pulse">Quero as atividades</CTA>
         </div>
         <p className="mt-5 text-sm font-bold opacity-85">
           ⚡ Liberado na hora · ♾️ Acesso para sempre · 🛡️ 7 dias de garantia
@@ -475,192 +458,6 @@ function MaterialCarousel() {
   );
 }
 
-const DEPOIMENTOS = [
-  {
-    src: "/depoimentos/depoimento-1.jpg",
-    alt: "Depoimento de Juliana Martins no WhatsApp mostrando as atividades de O Chamado de Abraão",
-    name: "Juliana Martins",
-  },
-  {
-    src: "/depoimentos/depoimento-2.jpg",
-    alt: "Depoimento de Camila Rodrigues no WhatsApp mostrando o desenho colorido de Jesus com as crianças",
-    name: "Camila Rodrigues",
-  },
-  {
-    src: "/depoimentos/depoimento-3.jpg",
-    alt: "Depoimento de Dona Helena no WhatsApp sobre o momento especial com os netinhos com a história de Jonas",
-    name: "Dona Helena",
-  },
-  {
-    src: "/depoimentos/depoimento-4.jpg",
-    alt: "Depoimento de Renata Souza no WhatsApp elogiando o pacote completo e os esboços de aula",
-    name: "Renata Souza",
-  },
-  {
-    src: "/depoimentos/depoimento-5.jpg",
-    alt: "Depoimento de Patrícia Almeida no WhatsApp usando as atividades na Escola Bíblica Infantil",
-    name: "Patrícia Almeida",
-  },
-];
-
-function DepoimentosCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    loop: true,
-    containScroll: false,
-    dragFree: false,
-  });
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [modalImage, setModalImage] = useState<string | null>(null);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setModalImage(null);
-    };
-    if (modalImage) {
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
-    }
-  }, [modalImage]);
-
-  return (
-    <div className="relative w-full mt-4 sm:mt-6 select-none">
-      {/* Seta esquerda no desktop */}
-      <button
-        type="button"
-        onClick={scrollPrev}
-        aria-label="Depoimento anterior"
-        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      {/* Seta direita no desktop */}
-      <button
-        type="button"
-        onClick={scrollNext}
-        aria-label="Próximo depoimento"
-        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Viewport do carrossel */}
-      <div
-        ref={emblaRef}
-        className="overflow-hidden cursor-grab active:cursor-grabbing w-full"
-        style={{ touchAction: "pan-y" }}
-      >
-        <div className="flex gap-4 sm:gap-6 py-2" style={{ touchAction: "pan-y" }}>
-          {DEPOIMENTOS.map((d, i) => (
-            <div
-              key={d.src}
-              className="w-[82vw] max-w-[315px] sm:w-[320px] shrink-0 mx-auto"
-            >
-              <div
-                onClick={() => setModalImage(d.src)}
-                className="group relative overflow-hidden rounded-2xl bg-card border-[4px] border-white cursor-pointer"
-                title="Toque para ampliar"
-              >
-                <img
-                  src={d.src}
-                  alt={d.alt}
-                  className="w-full h-auto block object-contain pointer-events-none select-none rounded-[12px]"
-                  width={576}
-                  height={1024}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  draggable={false}
-                />
-                <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1 rounded-full bg-navy/80 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm opacity-90 group-hover:opacity-100 transition shadow-sm">
-                  <span>🔍 Ampliar</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Indicadores (dots) de navegação */}
-      <div className="mt-4 flex items-center justify-center gap-2">
-        {DEPOIMENTOS.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => scrollTo(i)}
-            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-              selectedIndex === i ? "w-6 bg-navy" : "w-2 bg-navy/30 hover:bg-navy/50"
-            }`}
-            aria-label={`Ir para depoimento ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Modal / Lightbox de ampliação ao tocar ou clicar */}
-      {modalImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 p-3 sm:p-4 backdrop-blur-sm animate-in fade-in duration-200"
-          onClick={() => setModalImage(null)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="relative max-w-[420px] w-full max-h-[92vh] flex flex-col items-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setModalImage(null)}
-              className="self-end mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition text-lg font-bold cursor-pointer"
-              aria-label="Fechar"
-            >
-              ✕
-            </button>
-            <div className="overflow-hidden rounded-2xl bg-card shadow-2xl border border-white/20">
-              <img
-                src={modalImage}
-                alt="Depoimento ampliado"
-                className="w-full h-auto max-h-[80vh] object-contain block select-none"
-              />
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function Material() {
   return (
     <section id="material" className="bg-sun pt-8 pb-10 sm:py-12 overflow-hidden">
@@ -687,27 +484,19 @@ function Material() {
 
       <div className={`${W} mt-4`}>
         <CTA className="material-cta-pulse">Quero esse material</CTA>
-      </div>
-
-      {/* Provas Sociais — Substitui exclusivamente o vídeo 'Na mesa de casa' dentro da área amarela */}
-      <div className="mt-10 sm:mt-14 w-full">
-        <div className={`${W} text-center`}>
-          <h3 className="text-[1.65rem] min-[360px]:text-[1.85rem] sm:text-[2.2rem] font-bold leading-tight text-navy uppercase font-display">
-            Quem conhece, se{" "}
-            <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-navy px-[0.35em] pt-[0.08em] pb-[0.14em] text-sun shadow-sm">
-              encanta! 💛
-            </span>
-          </h3>
-          <p
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-            className="mt-2.5 sm:mt-3 inline-block w-[calc(100%-52px)] sm:w-auto max-w-[340px] sm:max-w-[440px] mx-auto rounded-[14px] bg-[#FFF9E9] px-4 py-2 sm:px-5 sm:py-2.5 font-poppins text-[15px] sm:text-[16.5px] font-medium text-[#101C4B] leading-snug text-center"
-          >
-            Veja o que nossos clientes estão dizendo sobre as atividades!
-          </p>
-        </div>
-
-        <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-6">
-          <DepoimentosCarousel />
+        <div className="relative mt-8 overflow-hidden rounded-3xl border-[6px] border-card">
+          <video
+            src="/loop-irmaos.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full aspect-[4/5] object-cover block"
+          />
+          <span className="absolute left-4 top-4 rounded-full bg-red px-4 py-1.5 font-display text-sm font-bold text-primary-foreground">
+            ▶ Na mesa de casa
+          </span>
         </div>
       </div>
     </section>
@@ -788,16 +577,16 @@ function AntesDepois() {
   ];
 
   const antesJesus = [
-    "Você quer ensinar sobre Jesus, mas falta tempo",
-    "Não sabe quais atividades preparar",
-    "A correria acaba tomando conta do dia",
-    "É difícil encontrar um momento com seu filho",
+    "Você quer ensinar sobre Jesus, mas não sabe como",
+    "Seu filho perde o interesse rapidinho",
+    "É difícil explicar as histórias da Bíblia",
+    "Faltam ideias de atividades divertidas",
   ];
   const depoisJesus = [
-    "Atividades prontinhas para imprimir",
-    "Tudo separado por idade",
-    "Sem precisar inventar brincadeiras",
-    "10 minutinhos de aprendizado com Jesus",
+    "Seu filho aprende sobre Jesus brincando",
+    "Histórias bíblicas viram atividades divertidas",
+    "Ele colore, descobre e aprende",
+    "10 minutos especiais com Deus todos os dias",
   ];
 
   const antes = isJesus ? antesJesus : antesCelular;
@@ -841,9 +630,7 @@ function AntesDepois() {
     <section className="bg-cream py-12">
       <div className={W}>
         <h2 className="text-center font-display text-[1.45rem] min-[360px]:text-[1.65rem] min-[390px]:text-[1.8rem] sm:text-[2.1rem] font-bold uppercase leading-tight text-ink text-balance">
-          {isJesus
-            ? "ENSINAR SOBRE JESUS NA CORRERIA DO DIA A DIA NÃO É FÁCIL!"
-            : "PRENDER A ATENÇÃO DAS CRIANÇAS NÃO É FÁCIL!"}
+          PRENDER A ATENÇÃO DAS CRIANÇAS NÃO É FÁCIL!
         </h2>
         <div className="mt-6 grid grid-cols-2 gap-3">
           <Card
@@ -851,8 +638,8 @@ function AntesDepois() {
             tone="bg-red"
             items={antes}
             mark={<span className="text-red">×</span>}
-            imgSrc={isJesus ? "/antes-rotina.jpg" : "/antes.webp"}
-            imgAlt={isJesus ? "Mãe com rotina corrida tentando dar atenção ao filho" : "Criança no tablet e adulto"}
+            imgSrc="/antes.webp"
+            imgAlt="Criança no tablet e adulto"
           />
           <Card
             title="DEPOIS"
@@ -865,12 +652,12 @@ function AntesDepois() {
         </div>
         <div className="mt-6 -rotate-1 rounded-3xl bg-sun px-5 py-6 text-center font-display text-[1.35rem] min-[360px]:text-[1.45rem] sm:text-[1.6rem] font-bold leading-tight text-navy shadow-soft text-balance">
           {isJesus
-            ? "Você não precisa de horas livres para criar momentos especiais com Deus!"
+            ? "Não basta contar histórias sobre Jesus. É preciso despertar o interesse das crianças!"
             : "O problema não é tirar a tela. É ter o que colocar no lugar."}
         </div>
         <div className="mt-6">
-          <CTA className={`lugar-cta-pulse font-black ${isJesus ? "text-[1.15rem] min-[360px]:text-[1.25rem] sm:text-[1.35rem]" : ""}`}>
-            {isJesus ? "QUERO AS ATIVIDADES PRONTAS!" : "Quero colocar a Bíblia no lugar"}
+          <CTA className={`lugar-cta-pulse ${isJesus ? "text-[1.15rem] min-[360px]:text-[1.25rem] sm:text-[1.35rem]" : ""}`}>
+            {isJesus ? "Quero prender a atenção das crianças!" : "Quero colocar a Bíblia no lugar"}
           </CTA>
         </div>
       </div>
@@ -1305,7 +1092,8 @@ function Final() {
           <CTA className="final-cta-pulse">Quero começar hoje</CTA>
         </div>
         <p className="mt-5 opacity-75">
-          P.S.: São apenas 10 minutinhos por dia que podem despertar nas crianças a curiosidade pela Bíblia e a vontade de aprender mais sobre Jesus.
+          P.S.: 10 minutos por dia é tudo o que separa o "só mais 5 minutinhos" de uma criança que senta, termina a
+          atividade e pede a próxima.
         </p>
       </div>
     </section>
