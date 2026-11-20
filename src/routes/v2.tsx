@@ -202,87 +202,91 @@ function Hero() {
   const isJesus = useAngulo() === "jesus";
 
   return (
-    <section className="relative overflow-hidden bg-navy-grad pb-12 pt-4 sm:pt-6 text-primary-foreground">
+    <section className="relative overflow-hidden bg-navy-grad pb-12 pt-4 sm:pt-6 lg:pt-10 lg:pb-16 text-primary-foreground">
       <span className="absolute left-4 top-[500px] h-3 w-3 rounded-full bg-go" />
-      <div className={`${W} text-center`}>
-        <span className="inline-block rounded-full bg-sun px-3.5 sm:px-5 py-1.5 sm:py-2 font-display text-[11.5px] sm:text-sm font-extrabold uppercase tracking-wider text-navy shadow-sm">
-          👧 Para crianças de 2 a 10 anos
-        </span>
-        <h1
-          className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.08] ${
-            isJesus
-              ? "text-[1.58rem] min-[360px]:text-[1.74rem] min-[390px]:text-[1.88rem] min-[420px]:text-[2.02rem] sm:text-[2.8rem]"
-              : "text-[1.3875rem] min-[360px]:text-[1.6rem] min-[390px]:text-[1.71rem] min-[420px]:text-[1.8125rem] sm:text-[2.5rem]"
-          }`}
-        >
-          {isJesus ? (
-            <>
-              <span className="relative inline-block whitespace-nowrap">
-                POUCO{" "}
-                <span className="relative z-10 inline-block rounded-t-[10px] rounded-bl-[10px] rounded-br-[2px] bg-sun pl-[0.34em] pr-[0.46em] pt-[0.16em] pb-[0.24em] text-navy">
-                  TEMPO
-                </span>{" "}
-                PARA
-              </span>
-              <span className="block -mt-1.5 sm:-mt-2.5 whitespace-nowrap">
-                ENSINAR SOBRE{" "}
-                <span className="relative z-10 inline-block rounded-b-[10px] rounded-tr-[10px] rounded-tl-[2px] bg-sun pl-[0.46em] pr-[0.34em] pt-[0.18em] pb-[0.18em] text-navy">
-                  JESUS?
-                </span>
-              </span>
-            </>
-          ) : (
-            <>
-              <span className="relative inline-block whitespace-nowrap">
-                <TitleRays className="absolute -top-2 -left-3 sm:-top-3.5 sm:-left-7 w-[18px] h-[18px] sm:w-7 sm:h-7 text-sun pointer-events-none select-none" />
-                TROQUE O{" "}
-                <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.24em] sm:px-[0.35em] pt-[0.1em] pb-[0.2em] text-navy">
-                  CELULAR
-                </span>
-              </span>
-              <span className="block mt-0.5 sm:mt-1 whitespace-nowrap [word-spacing:-0.05em] sm:[word-spacing:normal]">
-                POR MOMENTOS COM{" "}
-                <span className="relative -top-[3px] sm:-top-[5px] inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.16em] sm:px-[0.32em] pt-[0.18em] pb-[0.12em] text-navy">
-                  DEUS!
-                </span>
-              </span>
-            </>
-          )}
-        </h1>
-        {isJesus ? (
-          <p
-            className="hero-subtitle-v2"
-            style={{
-              fontFamily: '"Poppins", sans-serif',
-              fontWeight: 400,
-              fontSize: '15px',
-              color: '#ffffff',
-              lineHeight: 1.5,
-              textAlign: 'center',
-              width: 'calc(100% + 8px)',
-              maxWidth: '480px',
-              marginLeft: '-4px',
-              marginRight: '-4px',
-              marginTop: '14px',
-              marginBottom: '20px',
-              padding: 0,
-            }}
+      <div className="mx-auto w-full max-w-[480px] lg:max-w-[1200px] px-4 lg:px-8 text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-6 lg:items-center">
+        {/* Bloco Superior: Selo + Headline + Subtítulo (Coluna 1 superior no desktop) */}
+        <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
+          <span className="inline-block rounded-full bg-sun px-3.5 sm:px-5 py-1.5 sm:py-2 font-display text-[11.5px] sm:text-sm font-extrabold uppercase tracking-wider text-navy shadow-sm">
+            👧 Para crianças de 2 a 10 anos
+          </span>
+          <h1
+            className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.08] lg:leading-[1.12] text-center lg:text-left ${
+              isJesus
+                ? "text-[1.58rem] min-[360px]:text-[1.74rem] min-[390px]:text-[1.88rem] min-[420px]:text-[2.02rem] sm:text-[2.8rem] lg:text-[2.65rem] xl:text-[2.85rem]"
+                : "text-[1.3875rem] min-[360px]:text-[1.6rem] min-[390px]:text-[1.71rem] min-[420px]:text-[1.8125rem] sm:text-[2.5rem] lg:text-[2.6rem]"
+            }`}
           >
-            Agora ficou fácil! São mais de 1.000 atividades bíblicas prontas para imprimir e usar em apenas 10 minutinhos por dia!
-          </p>
-        ) : (
-          <p className="mt-5 sm:mt-6 text-[18px] sm:text-[20px] font-medium leading-[1.4] sm:leading-normal text-white w-[98%] max-w-[420px] sm:w-full sm:max-w-none mx-auto text-center">
-            São 1.000 atividades bíblicas para imprimir,
-            <br className="sm:hidden" />{" "}
-            separadas por idade, para as crianças
-            <br className="sm:hidden" />{" "}
-            brincarem, colorirem e aprenderem sobre
-            <br className="sm:hidden" />{" "}
-            Jesus longe das telas!
-          </p>
-        )}
+            {isJesus ? (
+              <>
+                <span className="relative inline-block whitespace-nowrap">
+                  POUCO{" "}
+                  <span className="relative z-10 inline-block rounded-t-[10px] rounded-bl-[10px] rounded-br-[2px] bg-sun pl-[0.34em] pr-[0.46em] pt-[0.16em] pb-[0.24em] text-navy">
+                    TEMPO
+                  </span>{" "}
+                  PARA
+                </span>
+                <span className="block -mt-1.5 sm:-mt-2.5 whitespace-nowrap">
+                  ENSINAR SOBRE{" "}
+                  <span className="relative z-10 inline-block rounded-b-[10px] rounded-tr-[10px] rounded-tl-[2px] bg-sun pl-[0.46em] pr-[0.34em] pt-[0.18em] pb-[0.18em] text-navy">
+                    JESUS?
+                  </span>
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="relative inline-block whitespace-nowrap">
+                  <TitleRays className="absolute -top-2 -left-3 sm:-top-3.5 sm:-left-7 w-[18px] h-[18px] sm:w-7 sm:h-7 text-sun pointer-events-none select-none" />
+                  TROQUE O{" "}
+                  <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.24em] sm:px-[0.35em] pt-[0.1em] pb-[0.2em] text-navy">
+                    CELULAR
+                  </span>
+                </span>
+                <span className="block mt-0.5 sm:mt-1 whitespace-nowrap [word-spacing:-0.05em] sm:[word-spacing:normal]">
+                  POR MOMENTOS COM{" "}
+                  <span className="relative -top-[3px] sm:-top-[5px] inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.16em] sm:px-[0.32em] pt-[0.18em] pb-[0.12em] text-navy">
+                    DEUS!
+                  </span>
+                </span>
+              </>
+            )}
+          </h1>
+          {isJesus ? (
+            <p
+              className="hero-subtitle-v2"
+              style={{
+                fontFamily: '"Poppins", sans-serif',
+                fontWeight: 400,
+                fontSize: '15px',
+                color: '#ffffff',
+                lineHeight: 1.5,
+                textAlign: 'center',
+                width: 'calc(100% + 8px)',
+                maxWidth: '480px',
+                marginLeft: '-4px',
+                marginRight: '-4px',
+                marginTop: '14px',
+                marginBottom: '20px',
+                padding: 0,
+              }}
+            >
+              Agora ficou fácil! São mais de 1.000 atividades bíblicas prontas para imprimir e usar em apenas 10 minutinhos por dia!
+            </p>
+          ) : (
+            <p className="mt-5 sm:mt-6 text-[18px] sm:text-[20px] font-medium leading-[1.4] sm:leading-normal text-white w-[98%] max-w-[420px] sm:w-full sm:max-w-none mx-auto lg:mx-0 text-center lg:text-left">
+              São 1.000 atividades bíblicas para imprimir,
+              <br className="sm:hidden" />{" "}
+              separadas por idade, para as crianças
+              <br className="sm:hidden" />{" "}
+              brincarem, colorirem e aprenderem sobre
+              <br className="sm:hidden" />{" "}
+              Jesus longe das telas!
+            </p>
+          )}
+        </div>
 
-        <div className={`relative z-10 ${isJesus ? "mt-0 sm:mt-6" : "mt-5 sm:mt-8"} w-[84%] sm:w-full mx-auto`}>
+        {/* Imagem principal + livros sobrepostos (Coluna 2 no desktop, ocupa ambas as linhas verticais) */}
+        <div className={`relative z-10 ${isJesus ? "mt-0 sm:mt-6" : "mt-5 sm:mt-8"} w-[84%] sm:w-full max-w-[420px] lg:max-w-[480px] xl:max-w-[500px] mx-auto lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center lg:my-auto`}>
           <div className="rotate-[1.5deg] sm:rotate-[2deg] overflow-hidden rounded-3xl border-[5px] sm:border-[6px] border-card bg-card shadow-lg">
             <img
               src="/mae-criancas.webp"
@@ -292,7 +296,7 @@ function Hero() {
               height={799}
             />
           </div>
-          <div className="absolute -left-2.5 -top-3 sm:-left-2.5 sm:-top-5 z-10 flex h-[74px] w-[74px] sm:h-24 sm:w-24 -rotate-12 items-center justify-center rounded-full border-[3.5px] sm:border-4 border-dashed border-card bg-sun font-display text-[11.5px] sm:text-sm font-bold uppercase leading-tight text-navy shadow-md">
+          <div className="absolute -left-2.5 -top-3 sm:-left-2.5 sm:-top-5 z-10 flex h-[74px] w-[74px] sm:h-24 sm:w-24 lg:h-28 lg:w-28 -rotate-12 items-center justify-center rounded-full border-[3.5px] sm:border-4 border-dashed border-card bg-sun font-display text-[11.5px] sm:text-sm lg:text-base font-bold uppercase leading-tight text-navy shadow-md">
             É só
             <br />
             imprimir!
@@ -306,29 +310,32 @@ function Hero() {
           </div>
         </div>
 
-        <div
-          className="hero-price-card relative z-[1] mx-auto mt-1 min-[360px]:mt-1.5 sm:-mt-5 flex w-fit items-center gap-4 min-[360px]:gap-5 sm:gap-6 rounded-[20px] sm:rounded-3xl bg-card px-5 min-[360px]:px-6 py-2.5 min-[360px]:py-3 text-left"
-        >
-          <span className="text-[12px] min-[360px]:text-[13px] sm:text-sm font-semibold leading-[1.25] text-muted-foreground">
-            a partir de
-            <br />
-            pagamento único
-          </span>
-          <span className="font-display text-[30px] min-[360px]:text-[32px] sm:text-4xl font-bold leading-none text-go">R$ 12</span>
-        </div>
-
-        <div className="mt-3.5 min-[360px]:mt-4 sm:mt-5">
-          <CTA className="hero-cta-pulse !shadow-none [filter:none]">Quero as atividades</CTA>
-        </div>
-        <p className="mt-5 text-sm font-bold opacity-85">
-          ⚡ Liberado na hora · ♾️ Acesso para sempre · 🛡️ 7 dias de garantia
-        </p>
-        <div className="mt-5 flex flex-wrap justify-center gap-2.5">
-          {["🧠 Atenção", "✏️ Coordenação", "📖 Histórias da Bíblia", "👨‍👩‍👧 Momento em família"].map((c) => (
-            <span key={c} className="rounded-full bg-card px-4 py-2 font-display text-[17px] font-bold text-navy">
-              {c}
+        {/* Bloco Inferior: Preço + Botão Verde + Garantia + Badges (Coluna 1 inferior no desktop) */}
+        <div className="lg:col-start-1 lg:row-start-2 lg:self-start lg:mt-0">
+          <div
+            className="hero-price-card relative z-[1] mx-auto lg:mx-0 mt-1 min-[360px]:mt-1.5 sm:-mt-5 lg:mt-0 flex w-fit items-center gap-4 min-[360px]:gap-5 sm:gap-6 rounded-[20px] sm:rounded-3xl bg-card px-5 min-[360px]:px-6 py-2.5 min-[360px]:py-3 text-left"
+          >
+            <span className="text-[12px] min-[360px]:text-[13px] sm:text-sm font-semibold leading-[1.25] text-muted-foreground">
+              a partir de
+              <br />
+              pagamento único
             </span>
-          ))}
+            <span className="font-display text-[30px] min-[360px]:text-[32px] sm:text-4xl font-bold leading-none text-go">R$ 12</span>
+          </div>
+
+          <div className="mt-3.5 min-[360px]:mt-4 sm:mt-5 lg:mt-6 w-full lg:max-w-[440px]">
+            <CTA className="hero-cta-pulse !shadow-none [filter:none]">Quero as atividades</CTA>
+          </div>
+          <p className="mt-5 text-sm font-bold opacity-85 text-center lg:text-left">
+            ⚡ Liberado na hora · ♾️ Acesso para sempre · 🛡️ 7 dias de garantia
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center lg:justify-start gap-2.5">
+            {["🧠 Atenção", "✏️ Coordenação", "📖 Histórias da Bíblia", "👨‍👩‍👧 Momento em família"].map((c) => (
+              <span key={c} className="rounded-full bg-card px-4 py-2 font-display text-[17px] font-bold text-navy">
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -368,7 +375,7 @@ const TILTS = [
 
 function MaterialCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: (viewSize, n) => (viewSize < 640 ? 16 : (viewSize - n) / 2),
+    align: (viewSize, n) => (viewSize < 640 ? 16 : (viewSize < 1024 ? (viewSize - n) / 2 : 0)),
     containScroll: false,
     loop: false,
     dragFree: false,
@@ -407,7 +414,7 @@ function MaterialCarousel() {
         onClick={scrollPrev}
         aria-label="Imagem anterior"
         disabled={!canScrollPrev}
-        className={`hidden md:flex absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-card text-navy shadow-lg transition-all cursor-pointer ${
+        className={`hidden md:flex absolute -left-3 lg:-left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-card text-navy shadow-lg transition-all cursor-pointer ${
           canScrollPrev
             ? "hover:scale-105 active:scale-95 opacity-100"
             : "opacity-40 cursor-not-allowed"
@@ -423,7 +430,7 @@ function MaterialCarousel() {
         onClick={scrollNext}
         aria-label="Próxima imagem"
         disabled={!canScrollNext}
-        className={`hidden md:flex absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-card text-navy shadow-lg transition-all cursor-pointer ${
+        className={`hidden md:flex absolute -right-3 lg:-right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 items-center justify-center rounded-full bg-card text-navy shadow-lg transition-all cursor-pointer ${
           canScrollNext
             ? "hover:scale-105 active:scale-95 opacity-100"
             : "opacity-40 cursor-not-allowed"
@@ -448,7 +455,7 @@ function MaterialCarousel() {
           {CAROUSEL_PAGES.map((page, i) => (
             <div
               key={page.src}
-              className="w-[76vw] max-w-[360px] sm:w-[240px] sm:max-w-none md:w-[260px] lg:w-[280px] shrink-0"
+              className="w-[76vw] max-w-[360px] sm:w-[240px] sm:max-w-none md:w-[260px] lg:w-[350px] xl:w-[360px] shrink-0"
             >
               <div
                 className={`overflow-hidden rounded-2xl bg-card shadow-soft p-2 sm:p-2.5 transition-transform duration-200 hover:scale-[1.02] ${
@@ -507,7 +514,7 @@ const DEPOIMENTOS = [
 
 function DepoimentosCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
+    align: (viewSize, snapSize) => (viewSize < 1024 ? (viewSize - snapSize) / 2 : 0),
     loop: true,
     containScroll: false,
     dragFree: false,
@@ -560,7 +567,7 @@ function DepoimentosCarousel() {
         type="button"
         onClick={scrollPrev}
         aria-label="Depoimento anterior"
-        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
+        className="hidden md:flex absolute -left-3 lg:-left-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -572,7 +579,7 @@ function DepoimentosCarousel() {
         type="button"
         onClick={scrollNext}
         aria-label="Próximo depoimento"
-        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 h-11 w-11 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
+        className="hidden md:flex absolute -right-3 lg:-right-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 lg:h-12 lg:w-12 items-center justify-center rounded-full bg-card/95 text-navy shadow-md transition hover:scale-105 active:scale-95 cursor-pointer border border-navy/10"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -589,7 +596,7 @@ function DepoimentosCarousel() {
           {DEPOIMENTOS.map((d, i) => (
             <div
               key={d.src}
-              className="w-[82vw] max-w-[315px] sm:w-[320px] shrink-0 mx-auto"
+              className="w-[82vw] max-w-[315px] sm:w-[320px] lg:w-[350px] xl:w-[360px] shrink-0 mx-auto"
             >
               <div
                 onClick={() => setModalImage(d.src)}
@@ -665,36 +672,36 @@ function DepoimentosCarousel() {
 
 function Material() {
   return (
-    <section id="material" className="bg-sun pt-8 pb-10 sm:py-12 overflow-hidden">
-      <div className={`${W} text-center`}>
-        <h2 className="text-[1.85rem] sm:text-[2.2rem] font-bold leading-tight text-navy">📸 Veja o material por dentro</h2>
-        <div className="mt-3.5 sm:mt-6 flex justify-center gap-2.5 sm:gap-3">
+    <section id="material" className="bg-sun pt-8 pb-10 sm:py-12 lg:py-16 overflow-hidden">
+      <div className="mx-auto w-full max-w-[480px] lg:max-w-[1200px] px-4 text-center">
+        <h2 className="text-[1.85rem] sm:text-[2.2rem] lg:text-[2.6rem] font-bold leading-tight text-navy">📸 Veja o material por dentro</h2>
+        <div className="mt-3.5 sm:mt-6 flex justify-center gap-2.5 sm:gap-4 lg:gap-6">
           {[
             ["1000", "Atividades"],
             ["100", "Histórias"],
             ["3", "Idades"],
           ].map(([n, l]) => (
-            <div key={l} className="rounded-2xl bg-card px-3 sm:px-4 py-2 sm:py-3 shadow-soft flex-1 sm:flex-initial">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-grape">{n}</div>
-              <div className="text-[11px] sm:text-xs font-extrabold uppercase text-muted-foreground">{l}</div>
+            <div key={l} className="rounded-2xl bg-card px-3 sm:px-5 lg:px-7 py-2 sm:py-3.5 lg:py-4 shadow-soft flex-1 sm:flex-initial">
+              <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-grape">{n}</div>
+              <div className="text-[11px] sm:text-xs lg:text-sm font-extrabold uppercase text-muted-foreground">{l}</div>
             </div>
           ))}
         </div>
-        <p className="mt-3 sm:mt-5 font-display text-[15px] sm:text-lg font-semibold text-ink">Páginas reais · arraste para o lado →</p>
+        <p className="mt-3 sm:mt-5 font-display text-[15px] sm:text-lg lg:text-xl font-semibold text-ink">Páginas reais · arraste para o lado →</p>
       </div>
 
-      <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-6">
+      <div className="w-full max-w-[1240px] mx-auto px-0 sm:px-6 lg:px-8">
         <MaterialCarousel />
       </div>
 
-      <div className={`${W} mt-4`}>
+      <div className="mx-auto w-full max-w-[480px] lg:max-w-[440px] px-4 mt-4 lg:mt-8">
         <CTA className="material-cta-pulse">Quero esse material</CTA>
       </div>
 
       {/* Provas Sociais — Substitui exclusivamente o vídeo 'Na mesa de casa' dentro da área amarela */}
-      <div className="mt-10 sm:mt-14 w-full">
-        <div className={`${W} text-center`}>
-          <h3 className="text-[1.65rem] min-[360px]:text-[1.85rem] sm:text-[2.2rem] font-bold leading-tight text-navy uppercase font-display">
+      <div className="mt-10 sm:mt-14 lg:mt-20 w-full">
+        <div className="mx-auto w-full max-w-[480px] lg:max-w-[1200px] px-4 text-center">
+          <h3 className="text-[1.65rem] min-[360px]:text-[1.85rem] sm:text-[2.2rem] lg:text-[2.6rem] font-bold leading-tight text-navy uppercase font-display">
             Quem conhece, se{" "}
             <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-navy px-[0.35em] pt-[0.08em] pb-[0.14em] text-sun shadow-sm">
               encanta! 💛
@@ -702,13 +709,13 @@ function Material() {
           </h3>
           <p
             style={{ fontFamily: "'Poppins', sans-serif" }}
-            className="mt-2.5 sm:mt-3 inline-block w-[calc(100%-52px)] sm:w-auto max-w-[340px] sm:max-w-[440px] mx-auto rounded-[14px] bg-[#FFF9E9] px-4 py-2 sm:px-5 sm:py-2.5 font-poppins text-[15px] sm:text-[16.5px] font-medium text-[#101C4B] leading-snug text-center"
+            className="mt-2.5 sm:mt-3 inline-block w-[calc(100%-52px)] sm:w-auto max-w-[340px] sm:max-w-[440px] lg:max-w-[580px] mx-auto rounded-[14px] bg-[#FFF9E9] px-4 py-2 sm:px-6 sm:py-2.5 font-poppins text-[15px] sm:text-[16.5px] lg:text-[17.5px] font-medium text-[#101C4B] leading-snug text-center"
           >
             Veja o que nossos clientes estão dizendo sobre as atividades!
           </p>
         </div>
 
-        <div className="w-full max-w-[1440px] mx-auto px-0 sm:px-6">
+        <div className="w-full max-w-[1240px] mx-auto px-0 sm:px-6 lg:px-8">
           <DepoimentosCarousel />
         </div>
       </div>
@@ -722,9 +729,9 @@ function Calculadora() {
   const p = PERIODS.find((x) => x.id === sel)!;
   const r = calcPeriod(p.days);
   return (
-    <section className={`bg-background ${isJesus ? "pt-7 pb-8 sm:py-12" : "py-12"}`}>
-      <div className={`${W} text-center`}>
-        <h2 className="text-[1.65rem] min-[360px]:text-[1.8rem] sm:text-[2.1rem] font-bold leading-snug sm:leading-tight text-ink max-w-[440px] mx-auto text-balance">
+    <section className={`bg-background ${isJesus ? "pt-7 pb-8 sm:py-12 lg:py-16" : "py-12 lg:py-16"}`}>
+      <div className="mx-auto w-full max-w-[480px] lg:max-w-[860px] px-4 text-center">
+        <h2 className="text-[1.65rem] min-[360px]:text-[1.8rem] sm:text-[2.1rem] lg:text-[2.4rem] font-bold leading-snug sm:leading-tight text-ink max-w-[440px] lg:max-w-[700px] mx-auto text-balance">
           {isJesus ? (
             <>
               Veja quantos momentos com <span className="hl">Jesus</span> você pode criar!
@@ -735,35 +742,35 @@ function Calculadora() {
             </>
           )}
         </h2>
-        <p className="mt-2.5 sm:mt-3 text-[15.5px] sm:text-lg text-muted-foreground">Com 1 atividade de 10 minutos por dia:</p>
-        <div className="mt-4 sm:mt-5 grid grid-cols-4 gap-2">
+        <p className="mt-2.5 sm:mt-3 text-[15.5px] sm:text-lg lg:text-xl text-muted-foreground">Com 1 atividade de 10 minutos por dia:</p>
+        <div className="mt-4 sm:mt-5 grid grid-cols-4 gap-2 lg:gap-3.5 lg:max-w-[640px] lg:mx-auto">
           {PERIODS.map((x) => (
             <button
               key={x.id}
               onClick={() => setSel(x.id)}
-              className={`rounded-xl border-2 py-2 sm:py-2.5 text-[14px] min-[360px]:text-[15px] font-extrabold transition ${
-                sel === x.id ? "border-grape bg-grape text-accent-foreground" : "border-lavender bg-lilac text-grape"
+              className={`rounded-xl border-2 py-2 sm:py-2.5 lg:py-3 text-[14px] min-[360px]:text-[15px] lg:text-[16px] font-extrabold transition cursor-pointer ${
+                sel === x.id ? "border-grape bg-grape text-accent-foreground shadow-sm" : "border-lavender bg-lilac text-grape hover:border-grape/40"
               }`}
             >
               {x.label}
             </button>
           ))}
         </div>
-        <div className="mt-4 sm:mt-5 grid grid-cols-3 gap-1.5 sm:gap-2 rounded-3xl bg-grape-grad px-2.5 sm:px-4 py-5 sm:py-6 text-accent-foreground shadow-soft">
+        <div className="mt-4 sm:mt-5 lg:mt-6 grid grid-cols-3 gap-1.5 sm:gap-2 lg:gap-4 rounded-3xl bg-grape-grad px-2.5 sm:px-4 lg:px-8 py-5 sm:py-6 lg:py-8 text-accent-foreground shadow-soft lg:max-w-[780px] lg:mx-auto">
           {[
             [r.activities, "atividades feitas"],
             [r.hours, isJesus ? "aprendendo sobre Jesus" : "juntos, longe da tela"],
             [r.stories, isJesus ? "momentos com Jesus" : "histórias bíblicas"],
           ].map(([n, l]) => (
             <div key={String(l)} className="flex flex-col items-center justify-start text-center">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-sun leading-none">{n}</div>
-              <div className="mt-1.5 text-[12.5px] min-[360px]:text-[13px] sm:text-sm font-bold leading-tight max-w-[110px] mx-auto">
+              <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-sun leading-none">{n}</div>
+              <div className="mt-1.5 lg:mt-2 text-[12.5px] min-[360px]:text-[13px] sm:text-sm lg:text-[15px] font-bold leading-tight max-w-[110px] lg:max-w-[160px] mx-auto">
                 {l}
               </div>
             </div>
           ))}
         </div>
-        <p className="mt-4 sm:mt-5 text-[14.5px] sm:text-base font-medium text-muted-foreground">
+        <p className="mt-4 sm:mt-5 lg:mt-6 text-[14.5px] sm:text-base lg:text-lg font-medium text-muted-foreground">
           {isJesus
             ? "E o melhor: são 1.000 atividades bíblicas!"
             : "E ainda sobra material: são 1000 atividades."}
@@ -821,7 +828,7 @@ function AntesDepois() {
     imgAlt: string;
   }) => (
     <div className="overflow-hidden rounded-3xl bg-card shadow-soft flex flex-col">
-      <div className={`${tone} py-2 text-center font-display text-lg font-bold text-primary-foreground`}>{title}</div>
+      <div className={`${tone} py-2 lg:py-2.5 text-center font-display text-lg lg:text-xl font-bold text-primary-foreground`}>{title}</div>
       <img
         src={imgSrc}
         alt={imgAlt}
@@ -829,7 +836,7 @@ function AntesDepois() {
         className="w-full object-cover object-center block"
         loading="lazy"
       />
-      <ul className="space-y-2 p-2.5 sm:p-3 text-[13.5px] min-[360px]:text-[14px] sm:text-[15px] font-bold leading-snug text-ink flex-1">
+      <ul className="space-y-2 p-2.5 sm:p-3 lg:p-4 text-[13.5px] min-[360px]:text-[14px] sm:text-[15px] lg:text-[16px] font-bold leading-snug text-ink flex-1">
         {items.map((i) => (
           <li key={i} className="flex items-start gap-1.5">
             <span className="shrink-0">{mark}</span>
@@ -840,14 +847,17 @@ function AntesDepois() {
     </div>
   );
   return (
-    <section className="bg-cream py-12">
-      <div className={W}>
-        <h2 className="text-center font-display text-[1.45rem] min-[360px]:text-[1.65rem] min-[390px]:text-[1.8rem] sm:text-[2.1rem] font-bold uppercase leading-tight text-ink text-balance">
+    <section className="bg-cream py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-[480px] lg:max-w-[1200px] px-4 lg:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-6 lg:items-center">
+        {/* Título da seção (Coluna 2 superior no desktop) */}
+        <h2 className="text-center lg:text-left font-display text-[1.45rem] min-[360px]:text-[1.65rem] min-[390px]:text-[1.8rem] sm:text-[2.1rem] lg:text-[2.35rem] font-bold uppercase leading-tight text-ink text-balance lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:self-end">
           {isJesus
             ? "ENSINAR SOBRE JESUS NA CORRERIA DO DIA A DIA NÃO É FÁCIL!"
             : "PRENDER A ATENÇÃO DAS CRIANÇAS NÃO É FÁCIL!"}
         </h2>
-        <div className="mt-6 grid grid-cols-2 gap-3">
+
+        {/* Cards ANTES e DEPOIS (Coluna 1 no desktop, lado a lado, ocupando toda a altura) */}
+        <div className="mt-6 lg:mt-0 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:row-span-3">
           <Card
             title="ANTES"
             tone="bg-red"
@@ -865,12 +875,16 @@ function AntesDepois() {
             imgAlt="Criança pintando atividade"
           />
         </div>
-        <div className="mt-6 -rotate-1 rounded-3xl bg-sun px-5 py-6 text-center font-display text-[1.35rem] min-[360px]:text-[1.45rem] sm:text-[1.6rem] font-bold leading-tight text-navy shadow-soft text-balance">
+
+        {/* Frase destacada no card amarelo (Coluna 2 meio no desktop) */}
+        <div className="mt-6 lg:mt-0 -rotate-1 rounded-3xl bg-sun px-5 py-6 lg:px-7 lg:py-7 text-center lg:text-left font-display text-[1.35rem] min-[360px]:text-[1.45rem] sm:text-[1.6rem] lg:text-[1.7rem] font-bold leading-tight text-navy shadow-soft text-balance lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:self-center">
           {isJesus
             ? "Você não precisa de horas livres para criar momentos especiais com Deus!"
             : "O problema não é tirar a tela. É ter o que colocar no lugar."}
         </div>
-        <div className="mt-6">
+
+        {/* Botão verde CTA (Coluna 2 inferior no desktop) */}
+        <div className="mt-6 lg:mt-0 lg:col-span-5 lg:col-start-8 lg:row-start-3 lg:self-start w-full">
           <CTA className={`lugar-cta-pulse font-black ${isJesus ? "text-[1.15rem] min-[360px]:text-[1.25rem] sm:text-[1.35rem]" : ""}`}>
             {isJesus ? "QUERO AS ATIVIDADES PRONTAS!" : "Quero colocar a Bíblia no lugar"}
           </CTA>
