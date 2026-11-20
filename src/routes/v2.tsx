@@ -211,7 +211,7 @@ function Hero() {
         <h1
           className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.08] ${
             isJesus
-              ? "text-[1.35rem] min-[360px]:text-[1.5rem] min-[390px]:text-[1.62rem] min-[420px]:text-[1.75rem] sm:text-[2.4rem]"
+              ? "text-[1.58rem] min-[360px]:text-[1.74rem] min-[390px]:text-[1.88rem] min-[420px]:text-[2.02rem] sm:text-[2.8rem]"
               : "text-[1.3875rem] min-[360px]:text-[1.6rem] min-[390px]:text-[1.71rem] min-[420px]:text-[1.8125rem] sm:text-[2.5rem]"
           }`}
         >
@@ -219,14 +219,14 @@ function Hero() {
             <>
               <span className="relative inline-block whitespace-nowrap">
                 POUCO{" "}
-                <span className="relative z-10 inline-block rounded-t-[10px] sm:rounded-t-[14px] rounded-bl-[10px] sm:rounded-bl-[14px] rounded-br-[4px] bg-sun pl-[0.22em] pr-[0.38em] pt-[0.1em] pb-[0.24em] text-navy">
+                <span className="relative z-10 inline-block rounded-t-[10px] rounded-bl-[10px] rounded-br-[2px] bg-sun pl-[0.34em] pr-[0.46em] pt-[0.16em] pb-[0.24em] text-navy">
                   TEMPO
                 </span>{" "}
                 PARA
               </span>
-              <span className="block -mt-1 sm:-mt-2 whitespace-nowrap">
+              <span className="block -mt-1.5 sm:-mt-2.5 whitespace-nowrap">
                 ENSINAR SOBRE{" "}
-                <span className="relative z-10 inline-block rounded-b-[10px] sm:rounded-b-[14px] rounded-tr-[10px] sm:rounded-tr-[14px] rounded-tl-[4px] bg-sun pl-[0.38em] pr-[0.24em] pt-[0.16em] pb-[0.16em] text-navy">
+                <span className="relative z-10 inline-block rounded-b-[10px] rounded-tr-[10px] rounded-tl-[2px] bg-sun pl-[0.46em] pr-[0.34em] pt-[0.18em] pb-[0.18em] text-navy">
                   JESUS?
                 </span>
               </span>
@@ -253,17 +253,17 @@ function Hero() {
           <p
             className="hero-subtitle-v2"
             style={{
-              fontFamily: '"Nunito Sans", system-ui, sans-serif',
+              fontFamily: '"Poppins", sans-serif',
               fontWeight: 400,
-              fontSize: '16px',
-              color: '#E4E9F3',
-              lineHeight: 1.42,
+              fontSize: '15px',
+              color: '#ffffff',
+              lineHeight: 1.5,
               textAlign: 'center',
               width: '94%',
               marginLeft: 'auto',
               marginRight: 'auto',
               marginTop: '14px',
-              marginBottom: '18px',
+              marginBottom: '20px',
               padding: 0,
             }}
           >
