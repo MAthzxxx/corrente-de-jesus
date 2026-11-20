@@ -209,9 +209,9 @@ function Hero() {
           👧 Para crianças de 2 a 10 anos
         </span>
         <h1
-          className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.12] ${
+          className={`relative mt-2.5 sm:mt-4 font-display font-bold uppercase leading-[1.15] ${
             isJesus
-              ? "text-[1.45rem] min-[360px]:text-[1.67rem] min-[390px]:text-[1.79rem] min-[420px]:text-[1.895rem] sm:text-[2.5rem]"
+              ? "text-[1.35rem] min-[360px]:text-[1.5rem] min-[390px]:text-[1.62rem] min-[420px]:text-[1.75rem] sm:text-[2.4rem]"
               : "text-[1.3875rem] min-[360px]:text-[1.6rem] min-[390px]:text-[1.71rem] min-[420px]:text-[1.8125rem] sm:text-[2.5rem]"
           }`}
         >
@@ -219,16 +219,11 @@ function Hero() {
             <>
               <span className="relative inline-block whitespace-nowrap">
                 <TitleRays className="absolute -top-2 -left-3 sm:-top-3.5 sm:-left-7 w-[18px] h-[18px] sm:w-7 sm:h-7 text-sun pointer-events-none select-none" />
-                ENSINE SOBRE{" "}
-                <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.22em] sm:px-[0.32em] pt-[0.1em] pb-[0.2em] text-navy">
-                  JESUS
-                </span>
-                ,
+                POUCO TEMPO PARA
               </span>
-              <span className="block mt-0.5 sm:mt-1 whitespace-nowrap [word-spacing:-0.05em] sm:[word-spacing:normal]">
-                MESMO SEM{" "}
-                <span className="relative -top-[3px] sm:-top-[5px] inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.16em] sm:px-[0.32em] pt-[0.18em] pb-[0.12em] text-navy">
-                  TEMPO!
+              <span className="block mt-1 sm:mt-1.5 whitespace-nowrap">
+                <span className="relative inline-block rounded-[10px] sm:rounded-[14px] bg-sun px-[0.24em] sm:px-[0.32em] pt-[0.1em] pb-[0.18em] text-navy shadow-sm">
+                  ENSINAR SOBRE JESUS?
                 </span>
               </span>
             </>
