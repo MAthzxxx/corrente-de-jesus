@@ -152,9 +152,10 @@
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
-  max-width: 370px;
-  margin-left: auto;
-  margin-right: auto;
+  width: calc(100% + 8px);
+  max-width: 480px;
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
 @utility hl {
@@ -228,7 +229,7 @@
   }
 }
 
-/* Subtítulo Hero v2 (Poppins Regular 400 - discreto e secundário) */
+/* Subtítulo Hero v2 (Poppins Regular 400 - largura expandida ~94% e margens laterais 12 a 16px) */
 .hero-subtitle-v2 {
   font-family: 'Poppins', var(--font-sans), system-ui, sans-serif !important;
   font-weight: 400 !important;
@@ -236,10 +237,10 @@
   line-height: 1.5 !important;
   color: #ffffff !important;
   text-align: center !important;
-  width: 100% !important;
-  max-width: 350px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  width: calc(100% + 8px) !important;
+  max-width: calc(100% + 8px) !important;
+  margin-left: -4px !important;
+  margin-right: -4px !important;
   margin-top: 14px !important;
   margin-bottom: 20px !important;
   padding: 0 !important;
@@ -248,7 +249,10 @@
 @media (min-width: 390px) {
   .hero-subtitle-v2 {
     font-size: 15.5px !important;
-    max-width: 365px !important;
+    width: calc(100% + 8px) !important;
+    max-width: calc(100% + 8px) !important;
+    margin-left: -4px !important;
+    margin-right: -4px !important;
   }
 }
 
@@ -257,7 +261,9 @@
     font-size: 17px !important;
     line-height: 1.5 !important;
     width: 100% !important;
-    max-width: 440px !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-top: 16px !important;
     margin-bottom: 24px !important;
   }
